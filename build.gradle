@@ -7,39 +7,31 @@ buildscript {
     }
 }
 
+
 plugins {
     id 'java'
-}
+    id 'application'
 
-apply plugin: 'org.springframework.boot'
+}
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-repositories {
-    mavenCentral()
-}
+allprojects {
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'com.paypal.springboot:resteasy-spring-boot-starter:2.3.0-RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    components {
-        withModule('org.springframework:spring-beans') {
-            allVariants {
-                withDependencyConstraints {
-                    // Need to patch constraints because snakeyaml is an optional dependency
-                    it.findAll { it.name == 'snakeyaml' }.each { it.version { strictly '1.19' } }
-                }
-            }
-        }
+    repositories {
+        mavenCentral()
     }
+
 }
+
+subprojects {
+    version = '1.0'
+}
+
+mainClassName = 'com.sea.template.App'
+
+
 
 //sourceSets {
 //    main {

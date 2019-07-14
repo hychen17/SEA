@@ -1,4 +1,4 @@
-package api;
+package com.sea.template.api;
 
 
 import javax.ws.rs.*;

@@ -1,6 +1,6 @@
-package config;
+package com.sea.template.config;
 
-import api.JaxrsApplication;
+import com.sea.template.api.JaxrsApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;

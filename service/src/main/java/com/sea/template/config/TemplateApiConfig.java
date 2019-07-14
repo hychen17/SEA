@@ -1,6 +1,6 @@
-package config;
+package com.sea.template.config;
 
-import api.TemplateApi;
+import com.sea.template.api.TemplateApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
