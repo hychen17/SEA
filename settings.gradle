@@ -1,0 +1,5 @@
+rootProject.name = 'sea-template'
+
+enableFeaturePreview('IMPROVED_POM_SUPPORT')
+
+include 'service'

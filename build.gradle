@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.4.RELEASE'
+    }
+}
+
+
+plugins {
+    id 'java'
+    id 'application'
+
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+    }
+
+}
+
+subprojects {
+    version = '1.0'
+}
+
+mainClassName = 'com.sea.template.App'
+
+
+
+//sourceSets {
+//    main {
+//        //if you truly want to override the defaults:
+//        output.resourcesDir = file('out/classes')
+//        // Compiled Java classes should use this directory
+//        java.outputDir = file('out/classes')
+//    }
+//}
