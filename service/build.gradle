@@ -10,6 +10,8 @@ dependencies {
     implementation 'com.paypal.springboot:resteasy-spring-boot-starter:2.3.0-RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
