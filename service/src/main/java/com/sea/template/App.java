@@ -1,6 +1,6 @@
-package main.java;
+package com.sea.template;
 
-import config.ServiceConfig;
+import com.sea.template.config.ServiceConfig;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 

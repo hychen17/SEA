@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: standalone
+
+security:
+  user:
+    name: "i5"
+    password: "Sea++1e"
+    role: "first-guest"
+
+
+sea:
