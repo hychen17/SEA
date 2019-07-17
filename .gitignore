@@ -2,5 +2,6 @@
 .idea
 gradle
 out
+out-*
 build
 service.iml

@@ -25,6 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(API_URLs).authenticated()
                 .and()
                 .httpBasic();
+
+        /*for showing h2 console*/
+        http.headers().frameOptions().disable();
     }
 
 }
