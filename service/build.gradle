@@ -15,19 +15,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
     implementation 'org.liquibase:liquibase-core:3.4.1'
+    implementation 'com.zaxxer:HikariCP'
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    components {
-        withModule('org.springframework:spring-beans') {
-            allVariants {
-                withDependencyConstraints {
-                    // Need to patch constraints because snakeyaml is an optional dependency
-                    it.findAll { it.name == 'snakeyaml' }.each { it.version { strictly '1.19' } }
-                }
-            }
-        }
-    }
+
 }
 
