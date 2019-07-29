@@ -31,13 +31,3 @@ subprojects {
 
 mainClassName = 'com.sea.template.App'
 
-
-
-//sourceSets {
-//    main {
-//        //if you truly want to override the defaults:
-//        output.resourcesDir = file('out/classes')
-//        // Compiled Java classes should use this directory
-//        java.outputDir = file('out/classes')
-//    }
-//}
