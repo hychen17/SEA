@@ -1,4 +1,4 @@
-package com.sea.template.guest;
+package com.sea.template.Repository;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

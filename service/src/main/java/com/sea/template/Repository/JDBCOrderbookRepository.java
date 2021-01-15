@@ -1,50 +1,45 @@
-package com.sea.template.guest;
+package com.sea.template.Repository;
 
 import org.slf4j.Logger;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+import javax.transaction.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class JDBCGuestRepo {
+public class JDBCOrderbookRepository {
 
-    private static final Logger log = getLogger(JDBCGuestRepo.class);
+    private static final Logger log = getLogger(JDBCOrderbookRepository.class);
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public JDBCGuestRepo(NamedParameterJdbcTemplate jdbcTemplate) {
+    public JDBCOrderbookRepository(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
-    public Guest getGuest(String name) {
-        final String sql = "SELECT * FROM samples WHERE name = :name";
+    @Transactional
+    public int persistRecord(String instrumentSpotDepthRecord, String recordStatus) {
+        final String sql = "INSERT INTO raw_spot_depth (id, message, status) VALUES (:id, :message, :status)";
         final MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("name", name);
 
-        return jdbcTemplate.queryForObject(sql, params, new GuestRowMapper());
-    }
+        final UUID recordId = UUID.randomUUID();
+        params.addValue("id", recordId);
+        params.addValue("message", instrumentSpotDepthRecord);
+        params.addValue("status", recordStatus);
 
-
-    public int persistGuest(String name) {
-        final String sql = "INSERT INTO samples (id, name) VALUES (:id, :name)";
-        final MapSqlParameterSource params = new MapSqlParameterSource();
-        final UUID guestId = UUID.randomUUID();
-        log.info("Assing id [{}] to guest [{}]", guestId, name);
-        params.addValue("id", guestId);
-        params.addValue("name", name);
         try {
+            log.info("Persisting record - id: <{}> msg: <{}>", recordId, instrumentSpotDepthRecord);
             int success = jdbcTemplate.update(sql, params);
-            log.info("Successfully created guest:[{}]", name);
+            log.info("Persisted record <{}>", recordId);
             return success;
-        } catch (RuntimeException e) {
-            log.error("Unable to create guest:[{}]", name);
+        } catch (Exception e) {
+            log.error("Unable to persist record:<{}>", recordId);
             e.printStackTrace();
-            throw e;
+            return 0;
         }
     }
 

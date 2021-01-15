@@ -1,7 +1,7 @@
 package com.sea.template.api;
 
 import com.sea.template.SeaIntegrationTest;
-import com.sea.template.guest.JDBCGuestRepo;
+import com.sea.template.Repository.JDBCOrderbookRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TemplateApiIT {
 
     @Autowired
-    private JDBCGuestRepo repo;
+    private JDBCOrderbookRepository repo;
 
     @Autowired
     private TemplateApi unit;

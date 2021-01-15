@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({TemplateApiConfig.class})
+@Import({OkApiConfig.class})
 public class ServiceConfig {
 
     @Bean

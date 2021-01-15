@@ -1,4 +1,4 @@
-package com.sea.template.guest;
+package com.sea.template.Repository;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -13,7 +13,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.junit.MockitoJUnit.rule;
 
-public class JDBCGuestRepoTest {
+public class JDBCOrderbookRepositoryTest {
 
     @Rule
     public MockitoRule rule = rule();
@@ -22,12 +22,12 @@ public class JDBCGuestRepoTest {
     private NamedParameterJdbcTemplate jdbcTemplate;
 
     private String name = "Tom";
-    private JDBCGuestRepo unit;
+    private JDBCOrderbookRepository unit;
 
 
     @Before
     public void setup() {
-        unit = new JDBCGuestRepo(jdbcTemplate);
+        unit = new JDBCOrderbookRepository(jdbcTemplate);
     }
 
     @Test

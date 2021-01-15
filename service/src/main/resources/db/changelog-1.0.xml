@@ -6,17 +6,18 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="sea-4" author="hychen17">
+    <changeSet id="sea-7" author="hychen17">
 
         <!--This should be removed in the formal project,
          as the checksum is for protecting unexpected altering to the table >-->
         <validCheckSum>ANY</validCheckSum>
 
-        <createTable tableName="samples">
+        <createTable tableName="raw_spot_depth">
             <column name="id" type="varchar(128)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(50)" />
+            <column name="message" type="LONGTEXT" />
+            <column name="status" type="varchar(50)" />
         </createTable>
     </changeSet>
 

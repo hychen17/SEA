@@ -13,11 +13,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    
-    implementation 'com.paypal.springboot:resteasy-spring-boot-starter:2.3.0-RELEASE'
 
+    implementation 'org.java-websocket:Java-WebSocket:1.3.5'
+
+    implementation 'org.springframework:spring-websocket'
+    implementation 'org.springframework:spring-messaging'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
     implementation 'com.h2database:h2'
     implementation 'org.liquibase:liquibase-core:3.4.1'
+    implementation 'com.paypal.springboot:resteasy-spring-boot-starter:2.3.0-RELEASE'
     implementation 'com.zaxxer:HikariCP'
 
 

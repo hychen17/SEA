@@ -21,6 +21,9 @@ security:
     password: "Sea++1e"
     role: "first-guest"
 
+okex:
+  ribbon:
+    listOfServers: https://www.okex.com/api/spot/v3/instruments/BTC-USDT/book?size=1&depth=0.1
 
-
-sea:
+poller:
+  instruments: BTC-USDT/book?size=1&depth=0.1,ETH-USDT/book?size=1&depth=0.1
