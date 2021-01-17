@@ -16,9 +16,23 @@
             <column name="id" type="varchar(128)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="instrument" type="varchar(50)" />
             <column name="message" type="LONGTEXT" />
             <column name="status" type="varchar(50)" />
         </createTable>
+
+        <createTable tableName="processed_record_and_action">
+            <column name="id" type="varchar(128)"></column>
+            <column name="action" type="varchar(50)" />
+            <column name="timestamp" type="varchar(50)" />
+        </createTable>
+
+        <addUniqueConstraint
+                columnNames="id, action"
+                constraintName="unique_record_and_action"
+                tableName="processed_record_and_action"
+        />
+
     </changeSet>
 
 </databaseChangeLog>

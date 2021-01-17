@@ -1,12 +1,12 @@
 package com.sea.template.config;
 
-import com.sea.template.api.JaxrsApplication;
+import com.sea.template.engine.api.JaxrsApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({OkApiConfig.class})
+@Import({ServiceApiConfig.class})
 public class ServiceConfig {
 
     @Bean

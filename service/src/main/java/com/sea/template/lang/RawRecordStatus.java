@@ -2,5 +2,5 @@ package com.sea.template.lang;
 
 public enum RawRecordStatus {
     NEW,
-    PROCESSED;
+    SAVED_TO_CSV;
 }
